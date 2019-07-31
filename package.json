@@ -25,7 +25,7 @@
     "moment-timezone": "^0.5.26",
     "normalize.css": "^8.0.1",
     "react": "16.0.0",
-    "react-dom": "16.0.0",
+    "react-dom": "16.0.1",
     "react-modal": "2.2.2",
     "react-moment": "^0.9.2",
     "react-router": "^5.0.1",
