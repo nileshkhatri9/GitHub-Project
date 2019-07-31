@@ -1,0 +1,47 @@
+{
+  "name": "githubpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nilesh Khatri",
+  "license": "MIT",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack",
+    "start:dev": "webpack-dev-server",
+    "dev-server": "webpack-dev-server"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "braces": "^2.3.2",
+    "css-loader": "^3.1.0",
+    "live-server": "^1.2.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "normalize.css": "^8.0.1",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-modal": "2.2.2",
+    "react-moment": "^0.9.2",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.4",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "uuid": "^3.3.2",
+    "validator": "8.0.0",
+    "webpack": "^2.7.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "2.9.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "node-sass": "^4.12.0"
+  }
+}
