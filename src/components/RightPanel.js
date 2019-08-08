@@ -80,41 +80,6 @@ export default class RightPanel extends Component {
   };
 
  
-
-  // onFormSubmit = (e) => {
-  //     var localRepo = this.state.repo;
-  //     var { isLoaded, items } = this.state;
-  //     const option = e.target.elements.option.value;
-
-  //     e.preventDefault();
-  
-  //     if(option){
-  //         localRepo = option;
-  //         e.target.elements.option.value='';
-  //         this.setState({repo: localRepo});
-
-  //         items.map((item) => {
-  //             if(( item.name.toLowerCase().includes(localRepo.toLowerCase())) || (item.description && (item.description.toLowerCase().includes(localRepo.toLowerCase()) ))){
-  //                 // console.log(items[item.id]);
-  //                 console.log(item.name,' | ',item.description);
-  //                 // <div>
-  //                 //     {item.description} | {item.name}
-  //                 // </div>
-          
-          
-  //             }
-  //             else {
-  //                 // console.log('Not Found');
-  //             }
-       
-  //         }
-  //         );
-  //         // console.log('repo', localRepo);
-  //     }
-
-  //     // console.log('Success');
-  // };
-
  render = () => {  
   var { isLoaded, items, repo, search,type, language, langFilter, typeFilterValue } = this.state;
   
