@@ -76,18 +76,6 @@ export default class RightPanel extends Component {
       });
        
     }
-    else {
-      console.log('Filter is failed ');
-      
-      filteredList = () => {
-        return (
-          <div>
-            {item.login} doesn’t have any repositories that match. 
-          </div>
-        );
-      }
-    }
-
     this.setState({ filteredList });
   };
 
@@ -130,36 +118,14 @@ export default class RightPanel extends Component {
  render = () => {  
   var { isLoaded, items, repo, search,type, language, langFilter, typeFilterValue } = this.state;
   
-  function filterdropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onClick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
-  // console.log(langFilter);
   if(!isLoaded){
     return <div> Still Loading</div>
   }
   else {
     const language = [];
-    // console.log('items: ', items);
     const { filteredList } = this.state;
-
     return(
       <div className="panelRight">
-        
-        {/* <p>This is from Right Panel</p> */}
         <div className="ul-class">
         <ul>
               <a href="#"><li className="nav-bar"><span className="nav">Overview</span></li></a>
@@ -169,47 +135,25 @@ export default class RightPanel extends Component {
               <a href="#"><li className="nav-bar"><span className="nav">Following<span className="number"> 2</span></span></li></a>
         </ul>
           <br></br><br></br>
-
         </div>
         <form className="filters-panel">
-          {/* <input type="text" name="option" /> */}
           <input className="search-tab" label="Find a Repository..." value = {this.state.search} onChange={this.onNamechange} />
-          
-          {/* <div className="filter-btn-tab"> */}
           <select className="filter-btn" value={this.state.typeFilterValue} onChange={this.typeFilter}  >
-          {/* <details> Typre */}
-            {/* <summary> Type:</summary> */}
-
             <option className="drop-down" all="all"> All</option>
             <option className="drop-down" sources="sources">Sources</option>
             <option className="drop-down" forks="forks">Forks</option>
             <option className="drop-down" archived="archived">Archived</option>
             <option className="drop-down" mirrors="mirrors">Mirrors</option>
-
-          {/* </details> */}
           </select>
 
-          {/* <div className="dropdown">
-            <button className="dropbtn">Right</button>
-            <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>           */}
-        
-          {/* <button className="filter-btn" >language</button> */}
           <select className="filter-btn" value={this.state.langFilter} onChange={this.languageFilter}> 
             <option all="all">All</option>
-            {/* <option html="html">HTML</option> */}
-            {/* {console.log(items.language) } */}
             { 
               items.map( (item) => {
                 if(item.language && language.indexOf(item.language) === -1){
                   language.push(item.language);
                 }                                
               }                            
-              // <option>{language && language }</option>
               )
             }
             {
@@ -217,11 +161,8 @@ export default class RightPanel extends Component {
                 <option key={lang} value={this.state.lang}> {lang} </option>
               )
             }
-            
           </select>
-          {/* {console.log(language)} */}
-          {/* </div> */}
-
+          
         </form>
         <div className="clear-filter">
           {
@@ -248,12 +189,10 @@ export default class RightPanel extends Component {
             </div>
           
           <p className="repo-desc">{item.description && item.description}</p>
-          {/* <p>  */}
             <div className="repo-footer">
               <div className="">
                 {item.language && 
                   <div>  
-                    {/* <div className="repo-language-color">  </div> */}
                     {
                       item.language === "HTML" && <svg width="22" height="22">  <circle cx="6" cy="6" r="6"  fill="#e34c26" /></svg>
                     }
@@ -263,9 +202,6 @@ export default class RightPanel extends Component {
                     {
                       item.language === "CSS" && <svg width="22" height="22">  <circle cx="6" cy="6" r="6"  fill="#563d7c" /></svg>
                     }
-                    
-
-                    {/* <svg width="22" height="22">  <circle cx="6" cy="6" r="6"  fill="yellow" /></svg> */}
                     <div className="repo-language"> {item.language} </div>
                     
                   </div>  
@@ -278,17 +214,12 @@ export default class RightPanel extends Component {
                 } 
                 <div className="updated-repo-data">
                 Updated On <Moment date={item.pushed_at} format="DD MMM YYYY" />  
-                </div>
-                
-          
+                </div>          
             </div>
-             {/* </p> */}
-
           </ol>
           )
         }
         </ul>
-        {/* <LeftPanel /> */}
       </div>
     );
   }
