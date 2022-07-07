@@ -21,7 +21,7 @@
     "braces": "^2.3.2",
     "css-loader": "^3.1.0",
     "live-server": "^1.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.26",
     "normalize.css": "^8.0.1",
     "react": "16.0.0",
